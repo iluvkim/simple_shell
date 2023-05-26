@@ -7,27 +7,27 @@
  */
 char *_getenv(const char *name)
 {
-    unsigned int u, envar_length;
-    char *dir;
+	unsigned int u, envar_length;
+	char *dir;
 
-    for (u = 0; __environ[u]; u++)
-    {
-        if (strncmp(__environ[u], name, strlen(name)) == 0)
-        {
-            envar_length = strlen(__environ[u]) - strlen(name) - 1;
-            dir = malloc(sizeof(char) * (envar_length + 1));
-            if (dir == NULL)
-            {
-                perror("_getenv() Error: dir malloc failed");
-                return NULL;
-            }
+	for (u = 0; __environ[u]; u++)
+	{
+		if (strncmp(__environ[u], name, strlen(name)) == 0)
+		{
+			envar_length = strlen(__environ[u]) - strlen(name) - 1;
+			dir = malloc(sizeof(char) * (envar_length + 1));
+			if (dir == NULL)
+			{
+				perror("_getenv() Error: dir malloc failed");
+				return (NULL);
+			}
 
-            strcpy(dir, __environ[u] + strlen(name) + 1);
-            return dir;
-        }
-    }
+			strcpy(dir, __environ[u] + strlen(name) + 1);
+			return (dir);
+		}
+	}
 
-    return NULL;
+	return (NULL);
 }
 
 /**
