@@ -2,24 +2,25 @@
 
 void my_exit(const char *status)
 {
-char *endptr;
-int exit_status = strtol(status, &endptr, 10);
+    int exit_status = atoi(status);
 
-if (*endptr != '\0')
-{
-fprintf(stderr, "Invalid exit status: %s\n", status);
-exit(1);
+    if (exit_status != 0 || strcmp(status, "0") == 0)
+    {
+        exit(exit_status);
+    }
+    else
+    {
+        fprintf(stderr, "Invalid exit status: %s\n", status);
+        exit(1);
+    }
 }
-exit(exit_status);
-}
 
-int _statuss(int argc, char *argv[])
+int mark(int argc, char *argv[])
 {
-int num;
-
-if (argc > 1 && strcmp(argv[1], "exit") == 0)
-{
-if (argc > 2)
+	int num;
+    if (argc > 1 && strcmp(argv[1], "exit") == 0)
+    {
+        if (argc > 2)
         {
             my_exit(argv[2]);
         }
@@ -29,23 +30,18 @@ if (argc > 2)
             exit(1);
         }
     }
-    else if (argc > 1 && strcmp(argv[1], "status") == 0)
-    {
-        if (argc > 2)
-        {
-            int exit_status = atoi(argv[2]);
-            exit(exit_status);
-        }
-        else
-        {
-            fprintf(stderr, "Usage: status <exit_status>\n");
-            exit(1);
-        }
-    }
     else if (argc > 1 && strcmp(argv[1], "fail") == 0)
     {
         fprintf(stderr, "Command failed.\n");
         exit(1);
+    }
+    else if (argc > 1 && strcmp(argv[1], "negative") == 0)
+    {
+        my_exit("-5");
+    }
+    else if (argc > 1 && strcmp(argv[1], "string") == 0)
+    {
+        my_exit("SomeString");
     }
     else
     {
@@ -60,9 +56,4 @@ if (argc > 2)
     }
 
     return 0;
-}
-
-int mark(int argc, char *argv[])
-{
-return _statuss(argc, argv);
 }
