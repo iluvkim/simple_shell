@@ -18,9 +18,6 @@
  * @token: pointer
  * @token_length: integer
  * @next: points to the next node
- *
- * Description: singly linked list node structure
- *
  */
 typedef struct listtoken_s
 {
@@ -34,8 +31,6 @@ typedef struct listtoken_s
  * struct builtin_command - Short description
  * @name: First member
  * @function: Second member
- *
- * Description: Longer description
  */
 struct builtin_command
 {
