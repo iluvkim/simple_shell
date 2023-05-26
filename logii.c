@@ -91,13 +91,13 @@ char *_alai(char *filename)
 			for (y = 0; a[y]; y++)
 			{
 				filepath_(&_path, a, filename, y);
-				i == stat(_path, &sb);
+				i = stat(_path, &sb);
 				if (i == 0)
 				{
 					wfree(&x, a);
 					return (_path);
 				}
-				free(file_path);
+				free(_path);
 			}
 			wfree(&x, a);
 		}
