@@ -74,6 +74,7 @@ int _unsetenv(const char *name);
 int _validpath(char *filename);
 void filepath_(char **_path, char **a, char *filename, int y);
 char *_alai(char *filename);
-int _cndd(int argc, char *argv[]);
-void execute_command(const char *cmd);
+void my_exit(const char* status);
+int _statuss(int argc, char *argv[]);
+
 #endif
