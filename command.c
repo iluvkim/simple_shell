@@ -1,16 +1,6 @@
 #include "shell.h"
 
-/**
- * malloc_char - short description
- *
- * Description: long description
- *
- * @string: reference to string
- * @size_of_malloc: int size of malloc
- * @mms: string error message
- *
- * Return: return description
- */
+
 char *malloc_char(char **string, size_t size_of_malloc, char *mms)
 {
 	*string = (char *) malloc(sizeof(char) * size_of_malloc);
@@ -22,17 +12,7 @@ char *malloc_char(char **string, size_t size_of_malloc, char *mms)
 	return (*string);
 }
 
-/**
- * malloc_array - short description
- *
- * Description: long description
- *
- * @array: reference to string
- * @size_of_malloc: int size of malloc
- * @mms: string error message
- *
- * Return: return description
- */
+
 char **malloc_array(char **array, size_t size_of_malloc, char *mms)
 {
 	array = (char **) malloc(sizeof(char *) * size_of_malloc);
@@ -44,16 +24,6 @@ char **malloc_array(char **array, size_t size_of_malloc, char *mms)
 	return (array);
 }
 
-/**
- * c_array - short description
- *
- * Description: long description
- *
- * @dest: argument_1 description
- * @source: argument_2 description
- *
- * Return: return description
- */
 int c_array(char **dest, char **pth)
 {
 	size_t v, w;
@@ -76,15 +46,6 @@ int c_array(char **dest, char **pth)
 	return (0);
 }
 
-/**
- * envname_ - short description
- *
- * Description: long description
- *
- * @name: name string
- *
- * Return: return description
- */
 int envname_(const char *name)
 {
 	int u, f;
@@ -97,17 +58,16 @@ int envname_(const char *name)
 }
 
 /**
- * _block - short description
+ * _block - Count the number of environment variables
  *
- * Description: long description
- *
- * Return: return description
+ * Return: The number of environment variables
  */
 int _block(void)
 {
-	unsigned int q;
+unsigned int q = 0;
 
-	for (q = 0; __environ[q]; q++);
+while (__environ[q] != NULL)
+q++;
 
-	return (q);
+return (q);
 }
