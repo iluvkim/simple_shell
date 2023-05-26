@@ -65,9 +65,12 @@ int _validpath(char *filename)
 void filepath_(char **_path, char **a,
 		char *filename, int y)
 {
-	malloc_char(_path,
-			(strlen(a[y]) + strlen(filename) + 2),
-			"_alai Error: malloc failed for _path");
+	*_path = malloc(strlen(a[y]) + strlen(filename) + 2);
+if (*_path == NULL)
+{
+    perror("_alai Error: malloc failed for _path");
+    exit(EXIT_FAILURE); // or handle the error appropriately
+}
 	strcpy(*_path, a[y]);
 	strcat(*_path, "/");
 	strcat(*_path, filename);
