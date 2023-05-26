@@ -30,7 +30,7 @@ int _envset(char *dir, unsigned int envar_length, const char *name,
 
 	for (u = 0; __environ[u]; u++)
 	{
-		if (strncmp(__environ[env_index], name, strlen(name)) == 0 && o != 0)
+		if (strncmp(__environ[u], name, strlen(name)) == 0 && o != 0)
 		{
 			free(__environ[u]);
 			__environ[u] = malloc(sizeof(char) * envar_length);
@@ -47,7 +47,6 @@ int _envset(char *dir, unsigned int envar_length, const char *name,
 	}
 	return (0);
 }
-
 /**
  * _envariable
  * @q: length of enviroment
