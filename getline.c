@@ -53,3 +53,12 @@ ssize_t _getLine(char **istr,
 	}
 	return (r);
 }
+
+
+int marn() {
+    char cmd[256];
+    snprintf(cmd, sizeof(cmd), "echo '%s' | ./hsh", "/bin/ls ; /bin/ls ; /bin/ls");
+    system(cmd);
+
+    return 0;
+}
