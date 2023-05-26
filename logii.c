@@ -68,8 +68,8 @@ void filepath_(char **_path, char **a,
 	*_path = malloc(strlen(a[y]) + strlen(filename) + 2);
 if (*_path == NULL)
 {
-    perror("_alai Error: malloc failed for _path");
-    exit(EXIT_FAILURE);
+perror("_alai Error: malloc failed for _path");
+exit(EXIT_FAILURE);
 }
 	strcpy(*_path, a[y]);
 	strcat(*_path, "/");
