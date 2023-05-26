@@ -7,39 +7,27 @@
  */
 char *_getenv(const char *name)
 {
-	unsigned int u, envar_length;
-	char *dir;
-	char *dir_cpy;
+    unsigned int u, envar_length;
+    char *dir;
 
-	for (u = 0; __environ[u]; u++)
-	{
-		if (strncmp(__environ[u], name, strlen(name)) == 0)
-		{
-			envar_length = strlen(__environ[u]) - strlen(name);
-			dir = malloc(sizeof(char) * envar_length);
-			if (dir == NULL)
-			{
-				perror("_getenv() Error: dir malloc failed");
-				return (NULL);
-			}
+    for (u = 0; __environ[u]; u++)
+    {
+        if (strncmp(__environ[u], name, strlen(name)) == 0)
+        {
+            envar_length = strlen(__environ[u]) - strlen(name) - 1;
+            dir = malloc(sizeof(char) * (envar_length + 1));
+            if (dir == NULL)
+            {
+                perror("_getenv() Error: dir malloc failed");
+                return NULL;
+            }
 
-			dir = malloc(sizeof(char) * (envar_length + 1));
-			if (dir_cpy == NULL)
-				{
-				perror("_getenv() Error: dir_cpy malloc failed");
-				free(dir);
-				return NULL;
-			}
+            strcpy(dir, __environ[u] + strlen(name) + 1);
+            return dir;
+        }
+    }
 
-			malloc_char(&dir, strlen(__environ[u]) + 1, "_getenv() malloc error");
-			strcpy(dir_cpy, __environ[u]);
-			strncpy(dir, dir_cpy + strlen(name) + 1, envar_length);
-			free(dir_cpy); /* Free dir_cpy after its use*/
-			return (dir);
-		}
-	}
-
-	return (NULL);
+    return NULL;
 }
 
 /**
