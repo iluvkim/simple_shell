@@ -1,59 +1,35 @@
 #include "shell.h"
 
-void my_exit(const char *status)
-{
-    int exit_status = atoi(status);
-
-    if (exit_status != 0 || strcmp(status, "0") == 0)
-    {
-        exit(exit_status);
+int is_integer(const char* str) {
+    int i = 0;
+    while (str[i] != '\0') {
+        if (str[i] < '0' || str[i] > '9') {
+            return 0;
+        }
+        i++;
     }
-    else
-    {
-        fprintf(stderr, "Invalid exit status: %s\n", status);
-        exit(1);
+    return 1;
+}
+
+void exit_command(int argc, char* argv[]) {
+    if (argc > 1) {
+        if (is_integer(argv[1])) {
+            int exit_status = atoi(argv[1]);
+            exit(exit_status);
+        } else {
+            printf("Invalid exit status: status must be an integer.\n");
+            exit(1);
+        }
+    } else {
+        exit(0);
     }
 }
 
-int mark(int argc, char *argv[])
-{
-	int num;
-    if (argc > 1 && strcmp(argv[1], "exit") == 0)
-    {
-        if (argc > 2)
-        {
-            my_exit(argv[2]);
-        }
-        else
-        {
-            fprintf(stderr, "Usage: exit status\n");
-            exit(1);
-        }
+int mark(int argc, char* argv[]) {
+    if (argc > 1) {
+        exit_command(argc, argv);
+    } else {
+        printf("No arguments provided.\n");
     }
-    else if (argc > 1 && strcmp(argv[1], "fail") == 0)
-    {
-        fprintf(stderr, "Command failed.\n");
-        exit(1);
-    }
-    else if (argc > 1 && strcmp(argv[1], "negative") == 0)
-    {
-        my_exit("-5");
-    }
-    else if (argc > 1 && strcmp(argv[1], "string") == 0)
-    {
-        my_exit("SomeString");
-    }
-    else
-    {
-        printf("my shell script.\n");
-
-        num = 6;
-        while (num > 0)
-        {
-            printf("long Loop: %d\n", num);
-            num--;
-        }
-    }
-
     return 0;
 }
