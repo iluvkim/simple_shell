@@ -23,12 +23,12 @@ char *_getenv(const char *name)
 				return (NULL);
 			}
 
-			dir_cpy = malloc(sizeof(char) * (envar_length + 1));
+			dir = malloc(sizeof(char) * (envar_length + 1));
 			if (dir_cpy == NULL)
-			{
+				{
 				perror("_getenv() Error: dir_cpy malloc failed");
-				free(dir); /* Free dir in case of failure*/
-				return (NULL);
+				free(dir);
+				return NULL;
 			}
 
 			malloc_char(&dir, strlen(__environ[u]) + 1, "_getenv() malloc error");
