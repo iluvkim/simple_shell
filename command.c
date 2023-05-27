@@ -1,6 +1,11 @@
 #include "shell.h"
 
-
+/**
+ * malloc_char - dynamically allocates memory for a char array
+ * @string: pointer to the char array to be allocated
+ * @size_of_malloc: size of memory to be allocated in bytes
+ * @mms: error message to be displayed in case of allocation failure
+ */
 char *malloc_char(char **string, size_t size_of_malloc, char *mms)
 {
 	*string = (char *) malloc(sizeof(char) * size_of_malloc);
@@ -12,7 +17,12 @@ char *malloc_char(char **string, size_t size_of_malloc, char *mms)
 	return (*string);
 }
 
-
+/**
+ * malloc_array - dynamically allocates memory for an array of char arrays
+ * @array: pointer to the array to be allocated
+ * @size_of_malloc: size of memory to be allocated in bytes
+ * @mms: error message to be displayed in case of allocation failure
+ */
 char **malloc_array(char **array, size_t size_of_malloc, char *mms)
 {
 	array = (char **) malloc(sizeof(char *) * size_of_malloc);
@@ -24,6 +34,11 @@ char **malloc_array(char **array, size_t size_of_malloc, char *mms)
 	return (array);
 }
 
+/**
+ * c_array - copies char arrays from source to destination array
+ * @dest: pointer to the destination array
+ * @pth: pointer to the source array
+ */
 int c_array(char **dest, char **pth)
 {
 	size_t v, w;
@@ -46,6 +61,10 @@ int c_array(char **dest, char **pth)
 	return (0);
 }
 
+/**
+ * envname_ - searches for an environment variable name in __environ array
+ * @name: name of the environment variable to search for
+ */
 int envname_(const char *name)
 {
 	int u, f;
