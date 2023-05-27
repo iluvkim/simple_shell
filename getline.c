@@ -31,8 +31,9 @@ char *_getenv(const char *name)
 }
 
 /**
- * _getLine
- * @istr: string
+ * _getLine - reads a line from input and stores it in a string
+ * @istr: pointer to the string to store the line read from input
+ * @nummallocalloc: pointer to the size of allocated memory for the string
  * @status: the exit status
  * Return: -1 on failure greater than 0 on success
  */
