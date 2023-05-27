@@ -1,6 +1,13 @@
 #include "shell.h"
 #define si(signal, handler)
 
+/**
+ * main - entry point of the program
+ * @ac: the number of command-line arguments
+ * @arvs: array of command-line argument strings
+ * @envp: array of environment variable strings
+ * Return: The function returns 0.
+ */
 int main(__attribute((unused)) int ac,
 		__attribute((unused)) char **arvs,
 		__attribute((unused)) char **envp)
