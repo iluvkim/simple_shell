@@ -5,6 +5,7 @@
  * @string: pointer to the char array to be allocated
  * @size_of_malloc: size of memory to be allocated in bytes
  * @mms: error message to be displayed in case of allocation failure
+ * Returns: NULL
  */
 char *malloc_char(char **string, size_t size_of_malloc, char *mms)
 {
@@ -22,6 +23,7 @@ char *malloc_char(char **string, size_t size_of_malloc, char *mms)
  * @array: pointer to the array to be allocated
  * @size_of_malloc: size of memory to be allocated in bytes
  * @mms: error message to be displayed in case of allocation failure
+ * Returns: NULL
  */
 char **malloc_array(char **array, size_t size_of_malloc, char *mms)
 {
@@ -38,6 +40,7 @@ char **malloc_array(char **array, size_t size_of_malloc, char *mms)
  * c_array - copies char arrays from source to destination array
  * @dest: pointer to the destination array
  * @pth: pointer to the source array
+ * Returns: the destination array `dest`
  */
 int c_array(char **dest, char **pth)
 {
@@ -64,6 +67,7 @@ int c_array(char **dest, char **pth)
 /**
  * envname_ - searches for an environment variable name in __environ array
  * @name: name of the environment variable to search for
+ * Returns: -1
  */
 int envname_(const char *name)
 {
