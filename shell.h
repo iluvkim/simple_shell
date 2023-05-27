@@ -8,9 +8,6 @@
 #include <sys/wait.h>
 #include <sys/stat.h>
 #define MAX_COMMAND_LENGTH 1000
-#ifndef LISTS_H_
-#define LISTS_H_
-
 
 /**
  * struct listtoken_s - singly linked list
