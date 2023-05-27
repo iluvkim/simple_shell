@@ -67,6 +67,7 @@ char **s_delim(char *istr, char *delim)
 /**
  * d_count - counts the digit
  * @n: the number to be counted
+ * Return: the number of digits in the given number
  */
 int d_count(size_t n)
 {
