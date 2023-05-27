@@ -8,7 +8,7 @@
  * @envp: array of environment variable strings
  * Return: The function returns 0.
  */
-int _paint(__attribute((unused)) int ac,
+int main(__attribute((unused)) int ac,
 		__attribute((unused)) char **arvs,
 		__attribute((unused)) char **envp)
 {
