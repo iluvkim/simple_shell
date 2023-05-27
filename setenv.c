@@ -28,7 +28,7 @@ void c_envar(char **dir, unsigned int envar_length, const char *name,
  * @envar_length: Length of the environment variable string
  * @name: Name of the environment variable
  * @o: Overwrite flag (0: do not overwrite, non-zero: overwrite)
- * Returns: 0 on success or -1 on failure.
+ * Return: 0 on success or -1 on failure.
  */
 int _envset(char *dir, unsigned int envar_length, const char *name,
 		int o)
@@ -61,7 +61,7 @@ int _envset(char *dir, unsigned int envar_length, const char *name,
  * @dir: The environment variable string
  * @envar_length: Length of the environment variable string
  * @q: Length of the existing environment variables
- * Returns: 0 on success or -1 on failure
+ * Return: 0 on success or -1 on failure
  */
 int _envariable(char *dir, unsigned int envar_length,
 		unsigned int q)
