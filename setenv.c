@@ -1,7 +1,11 @@
 #include "shell.h"
 
 /**
- * c_envar
+ * c_envar - Create an environment variable string
+ * @dir: Pointer to the resulting environment variable string
+ * @envar_length: Length of the environment variable string
+ * @name: Name of the environment variable
+ * @value: Value of the environment variable
  */
 void c_envar(char **dir, unsigned int envar_length, const char *name,
 		const char *value)
@@ -17,11 +21,14 @@ void c_envar(char **dir, unsigned int envar_length, const char *name,
 	strcat(*dir, "\0");
 }
 
+
 /**
- * _envset
- * @name: name string
- * @o: overwrite integer
- * Return: -1 or 0
+ * _envset - Set an environment variable
+ * @dir: The environment variable string
+ * @envar_length: Length of the environment variable string
+ * @name: Name of the environment variable
+ * @o: Overwrite flag (0: do not overwrite, non-zero: overwrite)
+ * Returns: 0 on success or -1 on failure.
  */
 int _envset(char *dir, unsigned int envar_length, const char *name,
 		int o)
@@ -47,10 +54,14 @@ int _envset(char *dir, unsigned int envar_length, const char *name,
 	}
 	return (0);
 }
+
+
 /**
- * _envariable
- * @q: length of enviroment
- * Return : -1
+ * _envariable - Add an environment variable to the environment
+ * @dir: The environment variable string
+ * @envar_length: Length of the environment variable string
+ * @q: Length of the existing environment variables
+ * Returns: 0 on success or -1 on failure
  */
 int _envariable(char *dir, unsigned int envar_length,
 		unsigned int q)
