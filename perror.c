@@ -1,5 +1,9 @@
 #include "shell.h"
 
+/**
+ * print_node - Print all nodes in the __environ list
+ * Return: 0
+ */
 int print_node(void)
 {
 	unsigned int h;
