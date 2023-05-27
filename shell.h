@@ -52,7 +52,8 @@ int isbuilt(char **a);
 int _handler(char **a);
 size_t listslen(const listtoken_t *head);
 void freeslist(listtoken_t **head);
-int main(__attribute((unused)) int ac, __attribute((unused)) char **arvs, __attribute((unused)) char **envp);
+int _paint(__attribute((unused)) int ac, __attribute((unused))
+	   char **arvs, __attribute((unused)) char **envp);
 size_t p_element(const listtoken_t *head);
 void inter_mode(void);
 int forks_thread(char *s, char **a);
