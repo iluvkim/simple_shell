@@ -1,6 +1,5 @@
 #define MAIN_H
 #define EXIT_CODE 1080
-#ifndef SHELL_H_
 #define SHELL_H_
 #include <stdio.h>
 #include <stdlib.h>
