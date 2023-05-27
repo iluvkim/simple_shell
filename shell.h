@@ -1,4 +1,4 @@
-#define MAIN_H
+#define SHELL_H
 #define EXIT_CODE 1080
 
 #include <stdio.h>
@@ -47,17 +47,18 @@ int exitbuilt(char **a);
 void ffree(char **a, char *istr);
 void wfree(char **path_var, char **a);
 char *_getenv(const char *name);
-ssize_t _getLine(char **istr,size_t *nummallocalloc, int status);
+ssize_t _getLine(char **istr, size_t *nummallocalloc, int status);
 int isbuilt(char **a);
 int _handler(char **a);
 size_t listslen(const listtoken_t *head);
 void freeslist(listtoken_t **head);
-int main(__attribute((unused)) int ac,__attribute((unused)) char **arvs,__attribute((unused)) char **envp);
+int main(__attribute((unused)) int ac, __attribute((unused)) char **arvs, __attribute((unused)) char **envp);
 size_t p_element(const listtoken_t *head);
 void inter_mode(void);
 int forks_thread(char *s, char **a);
 int print_node(void);
-void c_envar(char **dir, unsigned int envar_length, const char *name, const char *value);
+void c_envar(char **dir, unsigned int envar_length,
+	     const char *name, const char *value);
 int _envset(char *dir, unsigned int envar_length, const char *name, int o);
 int _envariable(char *dir, unsigned int envar_length, unsigned int q);
 int _setenv(const char *name, const char *value, int o);
@@ -74,7 +75,7 @@ int _unsetenv(const char *name);
 int _validpath(char *filename);
 void filepath_(char **_path, char **a, char *filename, int y);
 char *_alai(char *filename);
-void my_exit(const char* status);
+void my_exit(const char *status);
 int _statuss(int argc, char *argv[]);
 
 #endif
