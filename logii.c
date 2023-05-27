@@ -36,8 +36,8 @@ listtoken_t *_nodetoken(listtoken_t **head, char *token)
 }
 
 /**
- * _validpath
- * @filename: string
+ * _validpath - checks if a filename has a valid path prefix
+ * @filename: string representing the filename
  * Return: 1 is executable 0 is non executable
  */
 int _validpath(char *filename)
@@ -57,8 +57,10 @@ int _validpath(char *filename)
 }
 
 /**
- * filepath_
+ * filepath_ - creates a file path by concatenating directory path and filename
  * @filename: file name string
+ * @_path: pointer to store the created file path
+ * @a: array of directory paths
  * @y: index to copy
  * Return: void
  */
@@ -77,6 +79,13 @@ exit(EXIT_FAILURE);
 	strcat(*_path, "\0");
 }
 
+/**
+ * _alai - searches for a file in the directories specified by the PATH environment variable
+ * @filename: string representing the filename
+ *
+ * Return: The function returns a string representing the path of the found file if a match
+ * is found, or NULL if no match is found.
+ */
 char *_alai(char *filename)
 {
 	struct stat sb;
