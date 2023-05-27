@@ -31,6 +31,8 @@ void ffree(char **a, char *istr)
 
 /**
  * wfree - est if current char in buffer
+ * @x: pointer to the char array to be freed
+ * @a: pointer to the array of char arrays to be freed
  */
 void wfree(char **x, char **a)
 {
