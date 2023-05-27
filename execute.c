@@ -49,7 +49,7 @@ size_t p_element(const listtoken_t *head)
 }
 
 /**
- * inter_mode - checks if the program is running in interactive mode and displays a prompt
+ * inter_mode - is running in interactive mode and displays a prompt
  * Return: -1 on failure greater than 0 on success
  */
 void inter_mode(void)
