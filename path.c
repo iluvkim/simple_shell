@@ -1,7 +1,7 @@
 #include "shell.h"
 
 /**
- * sigint_handler - signal handler for SIGINT
+ * sigint_ - signal handler for SIGINT
  * @si: signal
  * Return: nothing
  */
@@ -18,7 +18,7 @@ void sigint_(int si)
 /**
  * _unsetenv - unset an environment variable
  * @name: name of the environment variable to unset
- * Returns: 0 on success or -1 on failure.
+ * Return: 0 on success or -1 on failure.
  */
 int _unsetenv(const char *name)
 {
