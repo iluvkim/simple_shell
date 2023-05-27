@@ -12,8 +12,6 @@
 #include <sys/wait.h>
 #include <sys/stat.h>
 #define MAX_COMMAND_LENGTH 1000
-#ifndef LISTS_H_
-#define LISTS_H_
 
 
 /**
@@ -55,12 +53,14 @@ int isbuilt(char **a);
 int _handler(char **a);
 size_t listslen(const listtoken_t *head);
 void freeslist(listtoken_t **head);
-int _paint(__attribute((unused)) int ac, __attribute((unused)), char **arvs, __attribute((unused)) char **envp);
+int main(__attribute((unused)) int ac, __attribute((unused)),
+	 char **arvs, __attribute((unused)) char **envp);
 size_t p_element(const listtoken_t *head);
 void inter_mode(void);
 int forks_thread(char *s, char **a);
 int print_node(void);
-void c_envar(char **dir, unsigned int envar_length, const char *name, const char *value);
+void c_envar(char **dir, unsigned int envar_length,
+	     const char *name, const char *value);
 int _envset(char *dir, unsigned int envar_length, const char *name, int o);
 int _envariable(char *dir, unsigned int envar_length, unsigned int q);
 int _setenv(const char *name, const char *value, int o);
