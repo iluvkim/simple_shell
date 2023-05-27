@@ -24,7 +24,7 @@ void freeslist(listtoken_t **head)
 
 
 /**
- * p_elemnt - prints all the elements of a listtoken_t list
+ * p_element - prints all the elements of a listtoken_t list
  * @head: points to the first node
  * Return: the number of nodes
  */
