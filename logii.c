@@ -80,11 +80,11 @@ exit(EXIT_FAILURE);
 }
 
 /**
- * _alai - searches for a file in the directories specified by the PATH environment variable
+ * _alai - searches for a file in the directories
  * @filename: string representing the filename
  *
- * Return: The function returns a string representing the path of the found file if a match
- * is found, or NULL if no match is found.
+ * Return: The function returns a string
+ * or NULL if no match is found.
  */
 char *_alai(char *filename)
 {
