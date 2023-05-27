@@ -4,7 +4,7 @@
  * forks_thread - Fork a child process and execute a command
  * @s: String command to execute
  * @a: Array of arguments for the command
- * Returns: 0 on success or -1 on failure.
+ * Return: 0 on success or -1 on failure.
  */
 int forks_thread(char *s, char **a)
 {
